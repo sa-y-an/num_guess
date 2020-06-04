@@ -1,6 +1,6 @@
 let min = 1,
   max = 10,
-  winingNumber = 7,
+  winingNumber = randNumber(),
   guessLeft = 3;
 
 const minInput = document.querySelector(".min-class"),
@@ -8,27 +8,41 @@ const minInput = document.querySelector(".min-class"),
   maxInput = document.querySelector(".max-class"),
   guessButton = document.querySelector("#guess-btn"),
   guessInput = document.querySelector("#guess-input"),
-  mssg = document.querySelector(".message");
+  mssg = document.querySelector(".message"),
+  cont = document.querySelector(".container");
 
 minInput.textContent = min;
 maxInput.textContent = max;
 
+game.addEventListener("mousedown", function (e) {
+  if (e.target.className === "play-again") {
+    window.location.reload();
+  }
+});
 guessButton.addEventListener("click", function () {
   let guessNumber = parseInt(guessInput.value);
 
   if (isNaN(guessNumber) || guessNumber < 1 || guessNumber > 10) {
-    message(`please enter a valid number between ${min} and ${max}`, "red");
+    message(`please enter a valid number from ${min} to ${max}`, "red");
   } else {
     if (guessNumber === winingNumber) {
-      message(" Hurrah ! you win...... 😎😎  ", "green");
-      guessInput.style.borderColor = "green";
-      guessInput.disabled = true;
-
-      window.alert("You won 😁......");
+      gameOver(true, " Hurrah ! you win...... 😎😎  ");
     } else {
-      message(`unfortunately your answer ${guessNumber} is wrong 😥😭`, "blue");
-
-      window.alert("you lost 😛");
+      guessLeft -= 1;
+      if (guessLeft > 0) {
+        message(
+          `unfortunately your answer ${guessNumber} is wrong 😥. You have ${guessLeft} guess left
+          keep trying .........................
+          Remember Hope is the best thing`,
+          "red"
+        );
+        guessInput.value = " ";
+      } else {
+        gameOver(
+          false,
+          `Sorry You Lost !!! try again 😊 , The correct answer was ${winingNumber}`
+        );
+      }
     }
   }
 });
@@ -36,4 +50,31 @@ guessButton.addEventListener("click", function () {
 function message(msg, color) {
   mssg.textContent = msg;
   mssg.style.color = color;
+}
+
+function gameOver(val, msg) {
+  let color = "yellow";
+  if (val == true) {
+    color = "white";
+  } else {
+    color = "cyan";
+  }
+  message(msg, color);
+  guessInput.disabled = true;
+  guessInput.style.borderColor = color;
+  guessButton.style.borderColor = color;
+  playAgain();
+}
+
+function randNumber() {
+  let x = Math.floor(Math.random() * (max - min + 1) + min);
+  return x;
+}
+
+function playAgain() {
+  guessButton.value = "Play Again";
+  guessButton.style.borderColor = "purple";
+  guessButton.className += "play-again";
+  cont.style.backgroundColor = "lightgreen";
+  head.style.color = "green";
 }
