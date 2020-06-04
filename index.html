@@ -10,6 +10,24 @@
     />
   </head>
   <body>
-    <div id="container"></div>
+    <div class="container">
+      <h1>
+        Guess the Number
+      </h1>
+      <div id="game">
+        Choose number is between <span class="min-class"> 1 </span> and
+        <span class="max-class"> 10 </span>
+        <br />
+        <input
+          type="number"
+          id="guess-input"
+          placeholder="Guess your input ....."
+        />
+        <input type="submit" value="Submit" id="guess-value" />
+      </div>
+      <p class="message"></p>
+    </div>
+
+    <script src="main.js"></script>
   </body>
 </html>
