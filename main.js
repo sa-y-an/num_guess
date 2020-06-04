@@ -19,6 +19,17 @@ guessButton.addEventListener("click", function () {
   if (isNaN(guessNumber) || guessNumber < 1 || guessNumber > 10) {
     message(`please enter a valid number between ${min} and ${max}`, "red");
   } else {
+    if (guessNumber === winingNumber) {
+      message(" Hurrah ! you win...... 😎😎  ", "green");
+      guessInput.style.borderColor = "green";
+      guessInput.disabled = true;
+
+      window.alert("You won 😁......");
+    } else {
+      message(`unfortunately your answer ${guessNumber} is wrong 😥😭`, "blue");
+
+      window.alert("you lost 😛");
+    }
   }
 });
 
