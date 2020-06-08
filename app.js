@@ -8,11 +8,16 @@ tl.fromTo(".container", { height: "0%" }, { height: "100%" })
     opacity: 0,
     stagger: 0.6,
   })
+  .from(".text-1", {
+    y: -50,
+    ease: "elastic",
+    opacity: 0,
+  })
   .from(".min-class", {
-    x: 150,
+    y: 50,
     opacity: 0,
   })
   .from(".max-class", {
-    x: -150,
+    y: -50,
     opacity: 0,
   });
