@@ -4,20 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Number Guessing Game</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
-    />
+    /> -->
     <link rel="icon" href="guess_icon.jpg" type="image/jpg" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1 id="head">
-        Guess the Number
-      </h1>
+      <div id="head">
+        <h1 id="head1">
+          Guess the Number
+        </h1>
+        <h2 class="head2">
+          <a href="https://sayan-mondal-tech.github.io/gsap_initiate/" >Home</a>
+        </h1>
+      </div>
       <div id="game">
-        Choose a number from <span class="min-class"> </span> to
+
+        <div class="text-1">
+        Choose a number from
+        <br> 
+        <span class="min-class"> </span>
+        to 
         <span class="max-class"> </span>
+      </div>
         <br />
         <input
           type="number"
@@ -30,5 +42,7 @@
     </div>
 
     <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
