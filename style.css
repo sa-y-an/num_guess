@@ -65,6 +65,7 @@
   margin: 20px;
   padding: 20px;
   justify-content: space-around;
+  flex: 2;
 }
 
 .text-1 {
@@ -79,4 +80,18 @@
   padding: 5px;
   font-size: 1.2em;
   background-color: rgba(233, 221, 221, 0.87);
+}
+
+.game-cont {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.profile {
+  flex: 1;
+}
+
+.profile img {
+  height: 100%;
+  width: 100%;
 }
