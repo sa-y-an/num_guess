@@ -2,7 +2,7 @@
 
 let tl = gsap.timeline({ defaults: { duration: 1 } });
 
-tl.fromTo(".container", { height: "0%" }, { height: "100%" })
+tl.fromTo(".contain", { height: "0%" }, { height: "100%" })
   .from("#game", {
     y: 50,
     opacity: 0,
@@ -13,6 +13,13 @@ tl.fromTo(".container", { height: "0%" }, { height: "100%" })
     ease: "elastic",
     opacity: 0,
   })
+  .fromTo(
+    ".profile",
+    {
+      height: 0,
+    },
+    { height: "100%" }
+  )
   .from(".min-class", {
     y: 50,
     opacity: 0,
