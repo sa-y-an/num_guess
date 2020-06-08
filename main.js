@@ -31,8 +31,8 @@ guessButton.addEventListener("click", function () {
       guessLeft -= 1;
       if (guessLeft > 0) {
         message(
-          `unfortunately your answer ${guessNumber} is wrong 😥. You have ${guessLeft} guess left
-          keep trying .........................
+          `Unfortunately your answer ${guessNumber} is wrong 😥. You have ${guessLeft} guess left
+          keep trying .........................\n
           Remember Hope is the best thing`,
           "red"
         );

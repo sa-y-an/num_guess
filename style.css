@@ -73,3 +73,10 @@
   font-weight: bold;
   color: rgba(233, 221, 221, 0.87);
 }
+
+#guess-input {
+  text-align: center;
+  padding: 5px;
+  font-size: 1.2em;
+  background-color: rgba(233, 221, 221, 0.87);
+}
